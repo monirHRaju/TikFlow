@@ -26,7 +26,7 @@ Confirmed product decisions:
                    └─────────────┬──────────────┘
                                  │ tRPC / REST (JWT + tenant claim)
                    ┌─────────────▼──────────────┐
-                   │  API Gateway (Fastify)     │
+                   │  API Gateway (Express 5)   │
                    │  - Auth, RBAC, RLS context │
                    │  - OpenAPI for webhooks    │
                    └──┬──────┬────────┬─────────┘
@@ -60,7 +60,8 @@ Confirmed product decisions:
 |---|---|---|
 | Frontend / BFF | Next.js 15 (App Router, RSC) + TypeScript + Tailwind + shadcn/ui | One framework for admin, reseller, self-care |
 | API style | tRPC for in-app calls; REST + OpenAPI for webhooks & public API | Type safety inside, ecosystem outside |
-| Backend services | Node.js 22 + Fastify | Lightweight, same language across stack |
+| Backend services | Node.js 22 + Express 5 + Zod (validation) + pino + pino-http (logging) + helmet + cors | Mature, ubiquitous, huge middleware ecosystem; team is already familiar |
+| API contract validation | Zod schemas + `@asteasolutions/zod-to-openapi` to publish OpenAPI 3.1; `express-zod-api` style request/response guards | Keeps Express' loose request typing safe without rewriting in Fastify |
 | DB | PostgreSQL 16 with RLS, `pgcrypto`, `pg_partman` | RLS is the multi-tenant guardrail |
 | ORM | Prisma — schema-first, migrations | Type-safe, mature |
 | Queue | BullMQ on Redis | Retries, delayed jobs, cron, rate limiting |
@@ -85,7 +86,7 @@ Confirmed product decisions:
 ```
 /apps
   /web              Next.js (admin, reseller, self-care, marketing)
-  /api              Fastify gateway (tRPC + REST + webhooks)
+  /api              Express 5 gateway (tRPC + REST + webhooks)
   /worker-billing   BullMQ workers: invoice, dunning, suspend
   /worker-mikrotik  BullMQ workers: RouterOS API jobs + state sync
   /worker-notify    SMS/Email/WA dispatcher
@@ -224,7 +225,7 @@ Sized for a small team (2–3 engineers). Each phase ends with a deployable incr
 - Monorepo (pnpm + Turborepo), TS strict, ESLint, Prettier.
 - CI: lint / typecheck / unit / Prisma migrate-check / Playwright smoke.
 - Docker Compose dev stack (Postgres 16, Redis, MailHog, MinIO).
-- Next.js + Fastify scaffolds talking via tRPC.
+- Next.js + Express 5 scaffolds talking via tRPC (`@trpc/server/adapters/express`).
 - Prisma + first migration: `tenants`, `users`, `roles`, RLS skeleton with a Prisma middleware that issues `SET LOCAL`.
 - Auth.js with credentials + TOTP MFA.
 - Sentry + OpenTelemetry wired.
@@ -325,7 +326,7 @@ When implementation starts, the first PRs should land:
 
 - `package.json`, `pnpm-workspace.yaml`, `turbo.json` — monorepo root.
 - `apps/web/` — Next.js 15 app skeleton.
-- `apps/api/src/server.ts` — Fastify bootstrap with tRPC + Zod.
+- `apps/api/src/server.ts` — Express 5 bootstrap: `helmet`, `cors`, `pino-http`, JSON body parser, tRPC adapter, Zod-validated REST routers, `/healthz`.
 - `apps/api/src/middleware/tenant-context.ts` — sets `app.current_tenant` per request.
 - `apps/worker-mikrotik/src/worker.ts` — BullMQ consumer with job handlers.
 - `apps/worker-billing/src/jobs/generate-invoices.ts`.
