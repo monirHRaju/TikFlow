@@ -1,11 +1,13 @@
 'use client';
 
-import { Bell, Search, UserCircle } from 'lucide-react';
+import { Bell, Search } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Button, Input, ThemeToggle } from '@tikflow/ui';
 
-export function TopBar() {
+import { UserMenu } from './UserMenu.js';
+
+export function TopBar({ userEmail }: { userEmail: string }) {
   const t = useTranslations();
 
   return (
@@ -28,9 +30,7 @@ export function TopBar() {
           <Bell />
         </Button>
         <ThemeToggle label={t('nav.toggleTheme')} />
-        <Button variant="ghost" size="icon" aria-label="Account">
-          <UserCircle />
-        </Button>
+        <UserMenu email={userEmail} />
       </div>
     </header>
   );

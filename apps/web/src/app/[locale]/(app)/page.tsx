@@ -10,11 +10,14 @@ import {
   CardTitle,
 } from '@tikflow/ui';
 
+import { auth } from '@/auth';
+
 type Params = { locale: string };
 
 export default async function DashboardPage({ params }: { params: Promise<Params> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const session = await auth();
   const t = await getTranslations('dashboard');
 
   const kpis: Array<{ labelKey: 'subscribers' | 'mrr' | 'online' | 'openTickets'; value: string }> = [
@@ -28,7 +31,9 @@ export default async function DashboardPage({ params }: { params: Promise<Params
     <div className="flex flex-col gap-6">
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">{t('title')}</h1>
-        <p className="mt-1 text-sm text-muted-foreground">{t('welcomeSubtitle')}</p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {t('welcomeAs', { email: session?.user?.email ?? '' })}
+        </p>
       </div>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@testcontainers/postgresql": "^10.13.2",
+    "@tikflow/auth": "workspace:*",
     "@tikflow/config": "workspace:*",
     "@types/node": "^22.7.5",
     "@types/pg": "^8.11.10",
