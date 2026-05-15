@@ -1,0 +1,72 @@
+{
+  "app": {
+    "name": "TikFlow",
+    "tagline": "Automated MikroTik billing & subscriber management"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "subscribers": "Subscribers",
+    "plans": "Plans",
+    "routers": "Routers",
+    "billing": "Billing",
+    "payments": "Payments",
+    "tickets": "Tickets",
+    "resellers": "Resellers",
+    "settings": "Settings",
+    "signOut": "Sign out",
+    "toggleTheme": "Toggle theme"
+  },
+  "auth": {
+    "signInTitle": "Sign in to TikFlow",
+    "signInSubtitle": "Use your administrator email and password.",
+    "tenantSlug": "Workspace",
+    "tenantSlugPlaceholder": "e.g. demo",
+    "email": "Email",
+    "emailPlaceholder": "you@isp.com",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signInButton": "Sign in",
+    "signingIn": "Signing in…",
+    "mfaTitle": "Two-factor authentication",
+    "mfaSubtitle": "Enter the 6-digit code from your authenticator app.",
+    "mfaCode": "Authentication code",
+    "verifyButton": "Verify",
+    "devNote": "Local dev login: workspace 'demo', owner@demo.com / tikflow-demo-2026.",
+    "errors": {
+      "invalidCredentials": "Incorrect workspace, email, or password.",
+      "accountLocked": "This account is temporarily locked. Try again in a few minutes.",
+      "accountInactive": "This account is not active. Contact your administrator.",
+      "unexpected": "Something went wrong. Please try again."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcomeTitle": "Welcome to TikFlow",
+    "welcomeAs": "Signed in as {email}",
+    "welcomeSubtitle": "Your operations command centre. The numbers will appear here once you connect a router and add your first subscribers.",
+    "kpi": {
+      "subscribers": "Active subscribers",
+      "mrr": "Monthly recurring revenue",
+      "online": "Currently online",
+      "openTickets": "Open tickets"
+    },
+    "empty": {
+      "title": "Nothing here yet",
+      "body": "Connect your first MikroTik router to start importing PPPoE secrets and seeing live activity.",
+      "cta": "Connect a router"
+    }
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "cancel": "Cancel",
+    "save": "Save",
+    "create": "Create",
+    "search": "Search",
+    "edit": "Edit",
+    "delete": "Delete"
+  }
+}

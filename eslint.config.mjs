@@ -15,6 +15,11 @@ export default tseslint.config(
       '**/test-results/**',
       '**/*.generated.*',
       'pnpm-lock.yaml',
+      // Workspaces that ship TSX / JSX run their own ESLint pipeline
+      // (next lint for apps, package-local eslint for UI). The root flat
+      // config focuses on TS/JS at the repo root and node-only packages.
+      'apps/**',
+      'packages/ui/**',
     ],
   },
   js.configs.recommended,

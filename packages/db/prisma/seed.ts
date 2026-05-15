@@ -1,6 +1,12 @@
 import { PrismaClient } from '@prisma/client';
 
+import { hashPassword } from '@tikflow/auth';
+
 const prisma = new PrismaClient();
+
+// Local-dev only. Production tenants always set their own password.
+const DEMO_OWNER_EMAIL = 'owner@demo.com';
+const DEMO_OWNER_PASSWORD = 'tikflow-demo-2026';
 
 // System permission catalogue. Codes follow `<resource>.<action>`.
 const PERMISSIONS: Array<{ code: string; description: string }> = [
@@ -109,6 +115,32 @@ async function seedDevTenant(): Promise<void> {
     }
     console.warn(`[seed] role: ${role.name} (${String(role.permissions.length)} perms)`);
   }
+
+  // Demo owner user: credentials documented in .env.example.
+  const ownerRole = await prisma.role.findUnique({
+    where: { tenantId_name: { tenantId: tenant.id, name: 'owner' } },
+  });
+  if (!ownerRole) {
+    throw new Error('owner role missing after seed');
+  }
+
+  const passwordHash = await hashPassword(DEMO_OWNER_PASSWORD);
+  const owner = await prisma.user.upsert({
+    where: { tenantId_email: { tenantId: tenant.id, email: DEMO_OWNER_EMAIL } },
+    update: { passwordHash, status: 'active' },
+    create: {
+      tenantId: tenant.id,
+      email: DEMO_OWNER_EMAIL,
+      passwordHash,
+      status: 'active',
+    },
+  });
+  await prisma.userRole.upsert({
+    where: { userId_roleId: { userId: owner.id, roleId: ownerRole.id } },
+    update: {},
+    create: { tenantId: tenant.id, userId: owner.id, roleId: ownerRole.id },
+  });
+  console.warn(`[seed] user: ${owner.email} (pw='${DEMO_OWNER_PASSWORD}')`);
 }
 
 async function main(): Promise<void> {
