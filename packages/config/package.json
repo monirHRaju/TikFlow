@@ -1,0 +1,17 @@
+{
+  "name": "@tikflow/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./eslint/base": "./eslint/base.mjs",
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/node.json": "./tsconfig/node.json",
+    "./tsconfig/nextjs.json": "./tsconfig/nextjs.json"
+  },
+  "files": ["eslint", "tsconfig"],
+  "peerDependencies": {
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3"
+  }
+}
