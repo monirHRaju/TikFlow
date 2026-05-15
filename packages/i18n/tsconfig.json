@@ -1,0 +1,9 @@
+{
+  "extends": "@tikflow/config/tsconfig/base.json",
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

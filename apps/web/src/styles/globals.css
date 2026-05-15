@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+@import '@tikflow/ui/styles/tokens.css';
+
+/* Make sure Tailwind scans the workspace UI package as well as the app. */
+@source '../**/*.{ts,tsx}';
+@source '../../../../packages/ui/src/**/*.{ts,tsx}';
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}

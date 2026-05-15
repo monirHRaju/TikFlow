@@ -1,0 +1,63 @@
+{
+  "app": {
+    "name": "TikFlow",
+    "tagline": "Automated MikroTik billing & subscriber management"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "subscribers": "Subscribers",
+    "plans": "Plans",
+    "routers": "Routers",
+    "billing": "Billing",
+    "payments": "Payments",
+    "tickets": "Tickets",
+    "resellers": "Resellers",
+    "settings": "Settings",
+    "signOut": "Sign out",
+    "toggleTheme": "Toggle theme"
+  },
+  "auth": {
+    "signInTitle": "Sign in to TikFlow",
+    "signInSubtitle": "Use your administrator email and password.",
+    "email": "Email",
+    "emailPlaceholder": "you@isp.com",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signInButton": "Sign in",
+    "signingIn": "Signing in…",
+    "mfaTitle": "Two-factor authentication",
+    "mfaSubtitle": "Enter the 6-digit code from your authenticator app.",
+    "mfaCode": "Authentication code",
+    "verifyButton": "Verify",
+    "notWiredYet": "Authentication backend lands in PR-0.5 — this form is UI-only for now."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcomeTitle": "Welcome to TikFlow",
+    "welcomeSubtitle": "Your operations command centre. The numbers will appear here once you connect a router and add your first subscribers.",
+    "kpi": {
+      "subscribers": "Active subscribers",
+      "mrr": "Monthly recurring revenue",
+      "online": "Currently online",
+      "openTickets": "Open tickets"
+    },
+    "empty": {
+      "title": "Nothing here yet",
+      "body": "Connect your first MikroTik router to start importing PPPoE secrets and seeing live activity.",
+      "cta": "Connect a router"
+    }
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "cancel": "Cancel",
+    "save": "Save",
+    "create": "Create",
+    "search": "Search",
+    "edit": "Edit",
+    "delete": "Delete"
+  }
+}
