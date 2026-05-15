@@ -1,0 +1,23 @@
+{
+  "name": "@tikflow/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./common": "./src/common.ts",
+    "./health": "./src/health.ts"
+  },
+  "files": ["src"],
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@tikflow/config": "workspace:*",
+    "typescript": "^5.6.3"
+  }
+}
