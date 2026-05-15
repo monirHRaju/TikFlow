@@ -190,7 +190,7 @@ If you add a tenant-scoped table without an RLS policy, the migration check in C
 
 | Phase | Status | Notes |
 |---|---|---|
-| 0 — Foundation, Design System, Security Baseline | **In progress** | PR-0.1 (this) lays monorepo + dev infra |
+| 0 — Foundation, Design System, Security Baseline | **In progress** | PR-0.1 monorepo+infra ✅, PR-0.2 db+RLS ✅, PR-0.3 API next |
 | 1 — Tenant, RBAC, Settings, Onboarding | not started | |
 | 2 — Subscribers, Zones, Plans, Inventory | not started | |
 | 3 — MikroTik Connector | not started | |
