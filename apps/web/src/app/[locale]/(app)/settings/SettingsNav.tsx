@@ -18,7 +18,7 @@ const TABS: ReadonlyArray<Tab> = [
   { href: '/settings/audit', labelKey: 'audit' },
 ];
 
-const ENABLED = new Set<string>(['/settings/general']);
+const ENABLED = new Set<string>(['/settings/general', '/settings/branding']);
 
 export function SettingsNav() {
   const t = useTranslations('settings.tabs');

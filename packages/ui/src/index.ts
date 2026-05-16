@@ -10,6 +10,7 @@ export {
 export { Input, type InputProps } from './components/Input.js';
 export { Label } from './components/Label.js';
 export { Select, type SelectProps } from './components/Select.js';
+export { Textarea, type TextareaProps } from './components/Textarea.js';
 export { Skeleton } from './components/Skeleton.js';
 export {
   Alert,

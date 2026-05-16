@@ -1,9 +1,10 @@
-import { redirect } from 'next/navigation';
 import { type ReactNode } from 'react';
 
-import { auth } from '@/auth';
+import { BrandStyle } from '@/components/BrandStyle';
 import { Sidebar } from '@/components/Sidebar';
 import { TopBar } from '@/components/TopBar';
+import { requireSession } from '@/lib/server/session';
+import { getBranding } from '@/lib/server/tenant';
 
 export default async function AppShellLayout({
   children,
@@ -13,16 +14,15 @@ export default async function AppShellLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const session = await auth();
-  if (!session?.user) {
-    redirect(`/${locale}/login`);
-  }
+  const session = await requireSession(locale);
+  const branding = await getBranding(session);
 
   return (
     <div className="flex min-h-screen w-full">
-      <Sidebar />
+      <BrandStyle accentHex={branding.accentHex} />
+      <Sidebar logoUrl={branding.logoUrl} />
       <div className="flex flex-1 flex-col">
-        <TopBar userEmail={session.user.email ?? ''} />
+        <TopBar userEmail={session.email} />
         <main className="flex-1 overflow-y-auto p-6 lg:p-8">{children}</main>
       </div>
     </div>

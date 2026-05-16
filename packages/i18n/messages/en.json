@@ -104,6 +104,35 @@
         "unexpectedTitle": "Couldn't save",
         "unexpected": "Something went wrong. Please try again."
       }
+    },
+    "branding": {
+      "cardTitle": "Branding",
+      "cardSubtitle": "Show your colours across the admin panel, customer portal, and invoices.",
+      "accentColor": "Accent colour",
+      "accentColorHelp": "Used for buttons, links, and focus rings throughout TikFlow.",
+      "accentEnabled": "Use a custom colour",
+      "accentUnset": "TikFlow default",
+      "preview": "Preview",
+      "logoUrl": "Logo URL",
+      "logoUrlHelp": "Public HTTPS URL of your logo (SVG or PNG, transparent background). Replaces the TikFlow mark in the sidebar.",
+      "logoCurrentLabel": "Current logo",
+      "invoicePrefix": "Invoice number prefix",
+      "invoicePrefixHelp": "Up to 10 characters; uppercase letters, digits, and hyphens. Example: INV-",
+      "invoiceHeader": "Invoice header",
+      "invoiceHeaderHelp": "Appears at the top of every invoice — typically your company name, address, and tax IDs.",
+      "invoiceHeaderPlaceholder": "Acme Networks Ltd.\n123 Fiber Street, Dhaka 1212\nBIN: 0001234567",
+      "invoiceFooter": "Invoice footer",
+      "invoiceFooterHelp": "Appears at the bottom of every invoice — payment terms, support contact, thank-you note.",
+      "invoiceFooterPlaceholder": "Thank you for your business. Payment due within 14 days. Support: support@acme.net",
+      "save": "Save changes",
+      "saved": "Branding saved",
+      "savedDesc": "Your changes will appear on the next page load.",
+      "errors": {
+        "forbiddenTitle": "You don't have permission",
+        "forbidden": "Only workspace owners and admins can change branding.",
+        "unexpectedTitle": "Couldn't save",
+        "unexpected": "Something went wrong. Please try again."
+      }
     }
   }
 }

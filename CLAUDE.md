@@ -8,7 +8,7 @@ Project-wide conventions for Claude Code (and humans). Treat this file as author
 
 TikFlow is a multi-tenant SaaS for ISPs that automates MikroTik-based subscriber management and billing. See `Plan.md` for product context, architecture, schema, and 16-phase roadmap.
 
-Current phase: **Phase 1 — Tenant, RBAC, Settings, Onboarding Wizard** (PR-1.1 general settings shipped).
+Current phase: **Phase 1 — Tenant, RBAC, Settings, Onboarding Wizard** (PR-1.1 general settings + PR-1.2 branding shipped).
 
 ---
 
@@ -194,7 +194,7 @@ If you add a tenant-scoped table without an RLS policy, the migration check in C
 | Phase | Status | Notes |
 |---|---|---|
 | 0 — Foundation, Design System, Security Baseline | **Complete** | PR-0.1 monorepo+infra ✅, PR-0.2 db+RLS ✅, PR-0.3 Express API ✅, PR-0.4 web+ui+i18n ✅, PR-0.5 Auth.js ✅, PR-0.6 CI + security ✅ |
-| 1 — Tenant, RBAC, Settings, Onboarding | **In progress** | PR-1.1 general settings (name/timezone/currency/billing email, audit-logged) ✅; PR-1.2 branding, PR-1.3 RBAC, PR-1.4 API keys, PR-1.5 onboarding wizard remaining |
+| 1 — Tenant, RBAC, Settings, Onboarding | **In progress** | PR-1.1 general settings ✅; PR-1.2 branding (accent colour, logo URL, invoice prefix/header/footer, runtime CSS injection) ✅; PR-1.3 RBAC, PR-1.4 API keys, PR-1.5 onboarding wizard remaining |
 | 2 — Subscribers, Zones, Plans, Inventory | not started | |
 | 3 — MikroTik Connector | not started | |
 | 4 — Notifications | not started | |
