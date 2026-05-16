@@ -1,0 +1,10 @@
+# Global owner — every PR needs review from @monirhraju until the team grows.
+*       @monirhraju
+
+# Security-sensitive areas — please be extra careful when changing these.
+/packages/auth/                @monirhraju
+/packages/db/prisma/           @monirhraju
+/apps/web/src/auth.ts          @monirhraju
+/infra/                        @monirhraju
+/.github/                      @monirhraju
+/docs/threat-model.md          @monirhraju

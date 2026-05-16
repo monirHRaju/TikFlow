@@ -8,7 +8,7 @@ Project-wide conventions for Claude Code (and humans). Treat this file as author
 
 TikFlow is a multi-tenant SaaS for ISPs that automates MikroTik-based subscriber management and billing. See `Plan.md` for product context, architecture, schema, and 16-phase roadmap.
 
-Current phase: **Phase 0 — Foundation, Design System, Security Baseline**.
+Current phase: **Phase 1 — Tenant, RBAC, Settings, Onboarding Wizard** (Phase 0 complete).
 
 ---
 
@@ -190,7 +190,7 @@ If you add a tenant-scoped table without an RLS policy, the migration check in C
 
 | Phase | Status | Notes |
 |---|---|---|
-| 0 — Foundation, Design System, Security Baseline | **In progress** | PR-0.1 monorepo+infra ✅, PR-0.2 db+RLS ✅, PR-0.3 Express API ✅, PR-0.4 web+ui+i18n ✅, PR-0.5 Auth.js ✅, PR-0.6 CI remaining |
+| 0 — Foundation, Design System, Security Baseline | **Complete** | PR-0.1 monorepo+infra ✅, PR-0.2 db+RLS ✅, PR-0.3 Express API ✅, PR-0.4 web+ui+i18n ✅, PR-0.5 Auth.js ✅, PR-0.6 CI + security ✅ |
 | 1 — Tenant, RBAC, Settings, Onboarding | not started | |
 | 2 — Subscribers, Zones, Plans, Inventory | not started | |
 | 3 — MikroTik Connector | not started | |
