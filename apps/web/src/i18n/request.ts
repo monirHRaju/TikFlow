@@ -3,7 +3,7 @@ import { getRequestConfig } from 'next-intl/server';
 import { isLocale } from '@tikflow/i18n';
 import enMessages from '@tikflow/i18n/messages/en.json';
 
-import { routing } from './routing.js';
+import { routing } from './routing';
 
 const messagesByLocale = {
   en: enMessages,

@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 
 import { Button, Input, ThemeToggle } from '@tikflow/ui';
 
-import { UserMenu } from './UserMenu.js';
+import { UserMenu } from './UserMenu';
 
 export function TopBar({ userEmail }: { userEmail: string }) {
   const t = useTranslations();

@@ -11,7 +11,7 @@ import {
 
 import { auth } from '@/auth';
 
-import { LoginForm } from './LoginForm.js';
+import { LoginForm } from './LoginForm';
 
 type Params = { locale: string };
 

@@ -16,8 +16,8 @@ import { useTranslations } from 'next-intl';
 
 import { cn } from '@tikflow/ui';
 
-import { Link, usePathname } from '@/i18n/navigation.js';
-import { Logo } from './Logo.js';
+import { Link, usePathname } from '@/i18n/navigation';
+import { Logo } from './Logo';
 
 type NavItem = {
   href: string;
