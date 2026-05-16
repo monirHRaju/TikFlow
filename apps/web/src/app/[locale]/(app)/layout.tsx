@@ -2,8 +2,8 @@ import { redirect } from 'next/navigation';
 import { type ReactNode } from 'react';
 
 import { auth } from '@/auth';
-import { Sidebar } from '@/components/Sidebar.js';
-import { TopBar } from '@/components/TopBar.js';
+import { Sidebar } from '@/components/Sidebar';
+import { TopBar } from '@/components/TopBar';
 
 export default async function AppShellLayout({
   children,

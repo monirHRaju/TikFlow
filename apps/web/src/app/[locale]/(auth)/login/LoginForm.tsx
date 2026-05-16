@@ -6,7 +6,7 @@ import { useState, useTransition, type FormEvent } from 'react';
 
 import { Button, Input, Label } from '@tikflow/ui';
 
-import { signInWithCredentials } from './actions.js';
+import { signInWithCredentials } from './actions';
 
 type Stage = 'credentials' | 'mfa';
 
