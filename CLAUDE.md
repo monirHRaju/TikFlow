@@ -8,7 +8,7 @@ Project-wide conventions for Claude Code (and humans). Treat this file as author
 
 TikFlow is a multi-tenant SaaS for ISPs that automates MikroTik-based subscriber management and billing. See `Plan.md` for product context, architecture, schema, and 16-phase roadmap.
 
-Current phase: **Phase 1 — Tenant, RBAC, Settings, Onboarding Wizard** (Phase 0 complete).
+Current phase: **Phase 1 — Tenant, RBAC, Settings, Onboarding Wizard** (PR-1.1 general settings shipped).
 
 ---
 
@@ -121,8 +121,11 @@ Every feature goes through this pipeline. Skipping a step is a review-blocker.
 1. **DB migration** — add/alter tables in `packages/db/prisma/schema.prisma`. Every new table gets `tenant_id`, `created_at`, `updated_at`, `deleted_at`, **and an RLS policy** in the same migration.
 2. **Prisma model regen** — `pnpm db:generate`.
 3. **Zod contract** — define request/response schemas in `packages/contracts`. They are the single source of truth for both server validation and client types.
-4. **tRPC procedure or REST route** — in `apps/api`. Always inside a tenant-scoped middleware (`SET LOCAL app.current_tenant`). Always rate-limited.
-5. **React Query hook** — in `apps/web/lib/hooks` (auto-typed via tRPC).
+4. **Server entrypoint** — choose one based on caller:
+   - **Server Action** (in `apps/web/src/.../actions.ts`) for first-party admin mutations driven by RSC forms. Wraps writes in `withTenantDb()`, validates with the Zod contract, and writes an audit log inside the same transaction. Use this for the admin panel.
+   - **tRPC procedure** (in `apps/api/src/routers`) for anything called from the subscriber PWA, field-tech PWA, or partner integrations. Always inside the tenant-scoped middleware (`SET LOCAL app.current_tenant`), always rate-limited.
+   - **REST route** (in `apps/api`) only for webhooks and the public API. OpenAPI-described.
+5. **Data fetching** — RSC pages read directly via `withTenantDb()`; tRPC calls use React Query hooks in `apps/web/lib/hooks`.
 6. **UI** — page or component using `@tikflow/ui` primitives only (no raw shadcn imports in feature code).
 7. **i18n** — every user-visible string goes in `packages/i18n/en.json` from day 1. No hard-coded strings — pseudo-locale CI gate will fail.
 8. **Tests** — unit (Vitest) for pure logic, integration (testcontainers) for DB code, Playwright e2e for user flows. **RLS test** mandatory for every new tenant-scoped table.
@@ -191,7 +194,7 @@ If you add a tenant-scoped table without an RLS policy, the migration check in C
 | Phase | Status | Notes |
 |---|---|---|
 | 0 — Foundation, Design System, Security Baseline | **Complete** | PR-0.1 monorepo+infra ✅, PR-0.2 db+RLS ✅, PR-0.3 Express API ✅, PR-0.4 web+ui+i18n ✅, PR-0.5 Auth.js ✅, PR-0.6 CI + security ✅ |
-| 1 — Tenant, RBAC, Settings, Onboarding | not started | |
+| 1 — Tenant, RBAC, Settings, Onboarding | **In progress** | PR-1.1 general settings (name/timezone/currency/billing email, audit-logged) ✅; PR-1.2 branding, PR-1.3 RBAC, PR-1.4 API keys, PR-1.5 onboarding wizard remaining |
 | 2 — Subscribers, Zones, Plans, Inventory | not started | |
 | 3 — MikroTik Connector | not started | |
 | 4 — Notifications | not started | |

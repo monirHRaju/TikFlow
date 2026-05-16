@@ -6,7 +6,7 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  transpilePackages: ['@tikflow/ui', '@tikflow/i18n'],
+  transpilePackages: ['@tikflow/ui', '@tikflow/i18n', '@tikflow/contracts'],
   // `experimental.typedRoutes` will be turned on once every link target
   // is a real, built route. For now Sidebar.tsx lists placeholder routes
   // for later phases, so we accept untyped href strings.

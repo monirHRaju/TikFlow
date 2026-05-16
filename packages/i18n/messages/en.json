@@ -64,9 +64,46 @@
     "retry": "Try again",
     "cancel": "Cancel",
     "save": "Save",
+    "saving": "Saving…",
     "create": "Create",
     "search": "Search",
     "edit": "Edit",
     "delete": "Delete"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your workspace, team, and integrations.",
+    "tabs": {
+      "navLabel": "Settings sections",
+      "general": "General",
+      "branding": "Branding",
+      "members": "Members & roles",
+      "apiKeys": "API keys",
+      "audit": "Audit log",
+      "comingSoon": "Coming soon"
+    },
+    "general": {
+      "cardTitle": "General",
+      "cardSubtitle": "Workspace identity, defaults, and billing contact.",
+      "slug": "Workspace slug",
+      "slugHelp": "Used in URLs and sign-in. Slugs are permanent — contact support to change.",
+      "name": "Workspace name",
+      "nameHelp": "Shown in the top bar and on customer-facing documents.",
+      "billingEmail": "Billing email",
+      "billingEmailHelp": "Invoices and payment receipts for TikFlow itself are sent here.",
+      "timezone": "Timezone",
+      "timezoneHelp": "Used to schedule billing runs, dunning reminders, and reports.",
+      "currency": "Currency",
+      "currencyHelp": "Default currency for plans, invoices, and ledger postings.",
+      "save": "Save changes",
+      "saved": "Settings saved",
+      "savedDesc": "Your workspace defaults have been updated.",
+      "errors": {
+        "forbiddenTitle": "You don't have permission",
+        "forbidden": "Only workspace owners and admins can change these settings.",
+        "unexpectedTitle": "Couldn't save",
+        "unexpected": "Something went wrong. Please try again."
+      }
+    }
   }
 }
