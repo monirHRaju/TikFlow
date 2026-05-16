@@ -27,7 +27,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
     "@tikflow/config": "workspace:*",
-    "@types/node": "^22.7.5",
+    "@types/node": "^25.8.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint-config-next": "^15.1.0",
