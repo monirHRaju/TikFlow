@@ -201,6 +201,7 @@ model ApiKey {
   id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   tenantId   String    @map("tenant_id") @db.Uuid
   label      String
+  prefix     String
   hashedKey  String    @unique @map("hashed_key")
   scopes     String[]
   lastUsedAt DateTime? @map("last_used_at") @db.Timestamptz(6)
@@ -212,6 +213,7 @@ model ApiKey {
   tenant Tenant @relation(fields: [tenantId], references: [id])
 
   @@index([tenantId])
+  @@index([tenantId, prefix])
   @@map("api_keys")
 }
 

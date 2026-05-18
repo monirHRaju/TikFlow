@@ -213,6 +213,73 @@
       "permissionCount": "{count, plural, =0 {No permissions} =1 {1 permission} other {# permissions}}",
       "customComingSoon": "Custom role creation is coming in a later release."
     },
+    "apiKeys": {
+      "cardTitle": "API keys",
+      "cardSubtitle": "Tokens for the public API, webhooks, and integrations. Treat them like passwords.",
+      "createKey": "Create key",
+      "empty": {
+        "title": "No API keys yet",
+        "subtitle": "Generate a key to call the TikFlow API from your own tools."
+      },
+      "col": {
+        "label": "Label",
+        "prefix": "Prefix",
+        "scopes": "Scopes",
+        "expires": "Expires",
+        "lastUsed": "Last used",
+        "actions": "Actions"
+      },
+      "never": "Never",
+      "expired": "Expired",
+      "revoke": "Revoke",
+      "revoking": "Revoking…",
+      "revokeConfirm": "Revoke \"{label}\"? Any client using this key will immediately stop working.",
+      "revokeError": {
+        "FORBIDDEN": "You don't have permission to revoke this key.",
+        "NOT_FOUND": "That key no longer exists.",
+        "UNEXPECTED": "Something went wrong. Please try again."
+      },
+      "new": {
+        "back": "Back to API keys",
+        "cardTitle": "Create an API key",
+        "cardSubtitle": "Pick a descriptive label, choose scopes, and set an expiry. You'll see the key once.",
+        "label": "Label",
+        "labelHelp": "Helps your future self identify which integration this key belongs to.",
+        "scopes": "Scopes",
+        "scopesHelp": "What this key can read. Keys ship read-only in this release — write scopes will be added per resource.",
+        "expiresAt": "Expires on",
+        "expiresAtHelp": "Leave blank for no expiry. We strongly recommend a rotation date.",
+        "submit": "Create key",
+        "submitting": "Creating…",
+        "warning": {
+          "title": "The key shows up once",
+          "body": "After you submit, TikFlow displays the secret a single time. Copy it into your password manager or secrets store before closing this page."
+        },
+        "errors": {
+          "forbiddenTitle": "You don't have permission",
+          "forbidden": "Only workspace owners and admins can manage API keys.",
+          "unexpectedTitle": "Couldn't create the key",
+          "unexpected": "Something went wrong. Please try again."
+        },
+        "created": {
+          "title": "Your API key is ready",
+          "subtitle": "\"{label}\" — copy the key below now. You won't see it again.",
+          "once": {
+            "title": "This is the only time the key will be shown",
+            "body": "TikFlow stores a hash, not the original value. If you lose it, revoke the key and create a new one."
+          },
+          "keyLabel": "API key",
+          "copy": "Copy",
+          "copied": "Copied",
+          "prefix": "Prefix",
+          "expiresAt": "Expires",
+          "scopes": "Scopes",
+          "never": "Never",
+          "confirm": "I've copied the key somewhere safe.",
+          "done": "Done"
+        }
+      }
+    },
     "branding": {
       "cardTitle": "Branding",
       "cardSubtitle": "Show your colours across the admin panel, customer portal, and invoices.",
