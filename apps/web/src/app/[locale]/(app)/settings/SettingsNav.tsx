@@ -6,19 +6,28 @@ import { cn } from '@tikflow/ui';
 
 import { Link, usePathname } from '@/i18n/navigation';
 
-type Tab = { href: string; labelKey: 'general' | 'branding' | 'members' | 'apiKeys' | 'audit' };
+type Tab = {
+  href: string;
+  labelKey: 'general' | 'branding' | 'members' | 'roles' | 'apiKeys' | 'audit';
+};
 
 const TABS: ReadonlyArray<Tab> = [
   { href: '/settings/general', labelKey: 'general' },
-  // The following land in PR-1.2 through PR-1.5; we render them as disabled
-  // chips so the IA is visible from day one.
   { href: '/settings/branding', labelKey: 'branding' },
   { href: '/settings/members', labelKey: 'members' },
+  { href: '/settings/roles', labelKey: 'roles' },
+  // The following land in PR-1.4 and PR-1.5; render disabled so the IA
+  // stays visible from day one.
   { href: '/settings/api-keys', labelKey: 'apiKeys' },
   { href: '/settings/audit', labelKey: 'audit' },
 ];
 
-const ENABLED = new Set<string>(['/settings/general', '/settings/branding']);
+const ENABLED = new Set<string>([
+  '/settings/general',
+  '/settings/branding',
+  '/settings/members',
+  '/settings/roles',
+]);
 
 export function SettingsNav() {
   const t = useTranslations('settings.tabs');
