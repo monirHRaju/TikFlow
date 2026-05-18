@@ -1,16 +1,27 @@
 version: 2
+
+# Conservative dependency posture for early-phase TikFlow:
+#  - monthly cadence (not weekly) — fewer interruptions
+#  - max 3 open PRs per ecosystem — keeps the queue scannable
+#  - major version bumps are ignored — they get reviewed manually on the
+#    next upgrade window so we don't merge surprise breaking changes
+#  - GitHub *security advisories* still surface separately regardless of
+#    schedule, so this does not delay genuine vulnerability fixes
 updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
       day: monday
       time: '03:00'
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 3
     versioning-strategy: increase
     commit-message:
       prefix: chore(deps)
       include: scope
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
     groups:
       types:
         patterns:
@@ -47,19 +58,27 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
       day: monday
       time: '03:00'
+    open-pull-requests-limit: 3
     commit-message:
       prefix: chore(ci)
       include: scope
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
 
   - package-ecosystem: docker
     directory: /infra
     schedule:
-      interval: weekly
+      interval: monthly
       day: monday
       time: '03:00'
+    open-pull-requests-limit: 3
     commit-message:
       prefix: chore(infra)
       include: scope
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
