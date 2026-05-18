@@ -7,7 +7,8 @@
     ".": "./src/index.ts",
     "./common": "./src/common.ts",
     "./health": "./src/health.ts",
-    "./tenant": "./src/tenant.ts"
+    "./tenant": "./src/tenant.ts",
+    "./member": "./src/member.ts"
   },
   "files": ["src"],
   "scripts": {

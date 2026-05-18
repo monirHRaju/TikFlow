@@ -19,6 +19,16 @@ export {
   AlertContent,
   type AlertProps,
 } from './components/Alert.js';
+export { Badge, type BadgeProps } from './components/Badge.js';
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableEmpty,
+} from './components/Table.js';
 export { FormField, type FormFieldProps } from './components/FormField.js';
 export { ThemeProvider, type ThemeProviderProps } from './components/ThemeProvider.js';
 export { ThemeToggle, type ThemeToggleProps } from './components/ThemeToggle.js';

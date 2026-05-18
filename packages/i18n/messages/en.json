@@ -77,7 +77,8 @@
       "navLabel": "Settings sections",
       "general": "General",
       "branding": "Branding",
-      "members": "Members & roles",
+      "members": "Members",
+      "roles": "Roles & permissions",
       "apiKeys": "API keys",
       "audit": "Audit log",
       "comingSoon": "Coming soon"
@@ -104,6 +105,113 @@
         "unexpectedTitle": "Couldn't save",
         "unexpected": "Something went wrong. Please try again."
       }
+    },
+    "members": {
+      "cardTitle": "Members",
+      "cardSubtitle": "Everyone who can sign in to this workspace.",
+      "addMember": "Add member",
+      "empty": "No members yet. Add your first teammate to get started.",
+      "you": "You",
+      "noRoles": "No roles",
+      "mfaOn": "MFA on",
+      "mfaOff": "No MFA",
+      "never": "Never",
+      "manage": "Manage",
+      "col": {
+        "email": "Email",
+        "status": "Status",
+        "roles": "Roles",
+        "mfa": "MFA",
+        "lastLogin": "Last sign-in",
+        "actions": "Actions"
+      },
+      "status": {
+        "active": "Active",
+        "invited": "Invited",
+        "suspended": "Suspended",
+        "deleted": "Deleted"
+      },
+      "add": {
+        "back": "Back to members",
+        "cardTitle": "Add a member",
+        "cardSubtitle": "Create an account, assign roles, and share the initial password.",
+        "email": "Email",
+        "emailHelp": "The address they'll use to sign in.",
+        "password": "Initial password",
+        "passwordHelp": "At least 12 characters with upper, lower, and a digit. Share securely — they should change it after first sign-in.",
+        "generate": "Generate",
+        "roles": "Roles",
+        "rolesHelp": "Pick one or more. You can change these later.",
+        "systemRole": "System",
+        "noDescription": "No description.",
+        "submit": "Create member",
+        "submitting": "Creating…",
+        "shareNote": {
+          "title": "Share the password securely",
+          "body": "Use a password manager, encrypted message, or hand it over in person. TikFlow does not email it."
+        },
+        "errors": {
+          "forbiddenTitle": "You don't have permission",
+          "forbidden": "Only workspace owners and admins can add members.",
+          "unexpectedTitle": "Couldn't create the member",
+          "unexpected": "Something went wrong. Please try again."
+        }
+      },
+      "detail": {
+        "back": "Back to members",
+        "you": "You",
+        "justCreatedTitle": "Member created",
+        "justCreatedBody": "{email} can now sign in. Share their initial password if you haven't already.",
+        "rolesTitle": "Roles",
+        "rolesSubtitle": "Roles determine what this member can see and do.",
+        "rolesSaved": "Roles updated.",
+        "assignedRoles": "Assigned roles",
+        "assignedRolesHelp": "A member must keep at least one role.",
+        "saveRoles": "Save roles",
+        "systemRole": "System",
+        "noDescription": "No description.",
+        "statusTitle": "Account status",
+        "statusSubtitle": "Suspend a member to immediately block sign-in without losing their account or history.",
+        "statusSaved": "Status updated.",
+        "isActive": "This member is active and can sign in.",
+        "isSuspended": "This member is suspended and cannot sign in.",
+        "suspend": "Suspend account",
+        "reactivate": "Reactivate account",
+        "mfa": {
+          "on": "MFA enabled",
+          "off": "MFA not set up"
+        },
+        "status": {
+          "active": "Active",
+          "invited": "Invited",
+          "suspended": "Suspended",
+          "deleted": "Deleted"
+        },
+        "selfWarning": {
+          "title": "You're editing your own account",
+          "body": "You cannot suspend yourself — ask another owner or admin if you need that."
+        },
+        "errors": {
+          "title": "Couldn't save",
+          "validation": "Some of the values are invalid.",
+          "forbidden": "Only workspace owners and admins can change member settings.",
+          "lastOwner": "You can't remove the last owner of the workspace.",
+          "selfSuspend": "You can't suspend your own account.",
+          "notFound": "That member no longer exists.",
+          "unknownRole": "One of the selected roles is invalid.",
+          "unexpected": "Something went wrong. Please try again."
+        }
+      }
+    },
+    "roles": {
+      "cardTitle": "Roles & permissions",
+      "cardSubtitle": "What each role can do. System roles ship with TikFlow and can't be edited.",
+      "systemRole": "System",
+      "noDescription": "No description.",
+      "noPermissions": "This role has no permissions.",
+      "memberCount": "{count, plural, =0 {No members} =1 {1 member} other {# members}}",
+      "permissionCount": "{count, plural, =0 {No permissions} =1 {1 permission} other {# permissions}}",
+      "customComingSoon": "Custom role creation is coming in a later release."
     },
     "branding": {
       "cardTitle": "Branding",
