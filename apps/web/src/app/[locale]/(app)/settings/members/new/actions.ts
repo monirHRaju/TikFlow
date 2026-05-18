@@ -1,7 +1,6 @@
 'use server';
 
 import { headers } from 'next/headers';
-import { redirect } from 'next/navigation';
 
 import { WeakPasswordError } from '@tikflow/auth';
 import { CreateMemberSchema } from '@tikflow/contracts';
@@ -58,10 +57,9 @@ export async function createMemberAction(
     hdrs.get('x-forwarded-for')?.split(',')[0]?.trim() ?? hdrs.get('x-real-ip') ?? null;
   const userAgent = hdrs.get('user-agent') ?? null;
 
-  let memberId: string;
   try {
     const member = await createMember(session, parsed.data, { ip, userAgent });
-    memberId = member.id;
+    return { ok: true, memberId: member.id };
   } catch (err) {
     if (err instanceof WeakPasswordError) {
       return {
@@ -83,6 +81,4 @@ export async function createMemberAction(
     console.error('[members.create] failed', err);
     return { ok: false, code: 'UNEXPECTED' };
   }
-
-  redirect(`/${locale}/settings/members/${memberId}?welcome=1`);
 }

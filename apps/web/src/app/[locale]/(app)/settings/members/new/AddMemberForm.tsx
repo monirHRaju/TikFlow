@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useActionState, useState } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { AlertTriangle, ArrowLeft, KeyRound, RefreshCcw } from 'lucide-react';
 
@@ -23,7 +23,7 @@ import {
   Input,
 } from '@tikflow/ui';
 
-import { Link } from '@/i18n/navigation';
+import { Link, useRouter } from '@/i18n/navigation';
 import { createMemberAction, type CreateMemberResult } from './actions';
 
 type Props = {
@@ -34,11 +34,22 @@ type Props = {
 export function AddMemberForm({ roles, locale }: Props) {
   const t = useTranslations('settings.members.add');
   const tc = useTranslations('common');
+  const router = useRouter();
 
   const [state, formAction] = useActionState<CreateMemberResult | null, FormData>(
     async (_prev, formData) => createMemberAction(locale, formData),
     null,
   );
+
+  // Forward to the new member's detail page on success. We do this in
+  // the client instead of `redirect()` inside the action so other
+  // callers (the onboarding Team step) can reuse the action without
+  // being bounced out of their own flow.
+  useEffect(() => {
+    if (state?.ok) {
+      router.push(`/settings/members/${state.memberId}?welcome=1`);
+    }
+  }, [state, router]);
 
   const [password, setPassword] = useState<string>('');
 

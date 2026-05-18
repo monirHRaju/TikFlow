@@ -70,6 +70,110 @@
     "edit": "Edit",
     "delete": "Delete"
   },
+  "onboarding": {
+    "skipForNow": "Skip for now",
+    "steps": {
+      "general": "Workspace",
+      "branding": "Branding",
+      "team": "Team",
+      "done": "Done"
+    },
+    "welcome": {
+      "title": "Welcome to TikFlow",
+      "subtitle": "Hi {email} — let's get your workspace ready.",
+      "intro": "We'll guide you through a few quick steps. Most of it can be changed later from Settings.",
+      "steps": {
+        "general": {
+          "title": "Confirm workspace defaults",
+          "body": "Name, timezone, currency, and a billing contact."
+        },
+        "branding": {
+          "title": "Add your branding",
+          "body": "Pick an accent colour and upload your logo URL."
+        },
+        "team": {
+          "title": "Invite your team",
+          "body": "Add admins, support staff, and field techs with the right roles."
+        },
+        "apiKeys": {
+          "title": "Hook up your tools (later)",
+          "body": "Once you finish onboarding, mint API keys for the integrations you run."
+        }
+      },
+      "footnote": "Everything is reversible. You can skip steps and finish later.",
+      "cta": "Get started"
+    },
+    "general": {
+      "title": "Confirm your workspace defaults",
+      "subtitle": "These shape your invoice numbering, scheduling, and pricing.",
+      "name": "Workspace name",
+      "billingEmail": "Billing email",
+      "billingEmailHelp": "Where TikFlow's own invoices land. Optional for now.",
+      "timezone": "Timezone",
+      "currency": "Currency",
+      "back": "Back",
+      "continue": "Save & continue",
+      "saving": "Saving…",
+      "errorTitle": "Couldn't save",
+      "errorBody": "Something went wrong. Please try again."
+    },
+    "branding": {
+      "title": "Make TikFlow yours",
+      "subtitle": "Change the accent colour and logo customers see in the admin panel.",
+      "accentColor": "Accent colour",
+      "accentColorHelp": "Used for buttons, links, and focus rings.",
+      "accentEnabled": "Use a custom colour",
+      "accentUnset": "TikFlow default",
+      "logoUrl": "Logo URL",
+      "logoUrlHelp": "Public HTTPS URL of an SVG or PNG. Skip if you don't have one handy.",
+      "invoiceNote": "Invoice header and footer customisation lives under Settings → Branding — you can fill them in any time.",
+      "back": "Back",
+      "skip": "Skip",
+      "continue": "Save & continue",
+      "saving": "Saving…",
+      "errorTitle": "Couldn't save",
+      "errorBody": "Something went wrong. Please try again."
+    },
+    "team": {
+      "title": "Invite a teammate",
+      "subtitle": "Add as many as you like — or skip and do it later from Settings → Members.",
+      "existingTitle": "Already on the team",
+      "existingSubtitle": "These people can already sign in.",
+      "email": "Email",
+      "emailHelp": "The address they'll use to sign in.",
+      "password": "Initial password",
+      "passwordHelp": "At least 12 characters with upper, lower, and a digit. Share securely.",
+      "generate": "Generate",
+      "roles": "Roles",
+      "add": "Add",
+      "adding": "Adding…",
+      "saved": "Teammate added",
+      "savedHint": "Add another or continue when you're done.",
+      "back": "Back",
+      "skip": "Skip for now",
+      "continue": "Continue",
+      "errorTitle": "Couldn't add the teammate",
+      "errorBody": "Something went wrong. Please try again."
+    },
+    "done": {
+      "title": "You're set up!",
+      "subtitle": "Welcome to TikFlow. Your workspace is ready.",
+      "next": {
+        "apiKeys": {
+          "title": "Issue an API key",
+          "body": "Generate read-only tokens for monitoring, dashboards, or scripts."
+        },
+        "mfa": {
+          "title": "Turn on MFA",
+          "body": "Owners and admins should set up an authenticator app before going live."
+        }
+      },
+      "phase2Note": "Subscribers, plans, and your first MikroTik router land in the next release — they'll appear in the sidebar then.",
+      "back": "Back",
+      "finish": "Go to dashboard",
+      "finishing": "Finishing…"
+    }
+  },
   "settings": {
     "title": "Settings",
     "subtitle": "Manage your workspace, team, and integrations.",
