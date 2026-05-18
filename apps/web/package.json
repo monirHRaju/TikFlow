@@ -15,7 +15,7 @@
     "@tikflow/db": "workspace:*",
     "@tikflow/i18n": "workspace:*",
     "@tikflow/ui": "workspace:*",
-    "lucide-react": "^0.456.0",
+    "lucide-react": "^0.577.0",
     "next": "^15.1.0",
     "next-auth": "^5.0.0-beta.25",
     "next-intl": "^3.26.0",
