@@ -9,7 +9,17 @@ export {
 } from './components/Card.js';
 export { Input, type InputProps } from './components/Input.js';
 export { Label } from './components/Label.js';
+export { Select, type SelectProps } from './components/Select.js';
+export { Textarea, type TextareaProps } from './components/Textarea.js';
 export { Skeleton } from './components/Skeleton.js';
+export {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  AlertContent,
+  type AlertProps,
+} from './components/Alert.js';
+export { FormField, type FormFieldProps } from './components/FormField.js';
 export { ThemeProvider, type ThemeProviderProps } from './components/ThemeProvider.js';
 export { ThemeToggle, type ThemeToggleProps } from './components/ThemeToggle.js';
 export { cn } from './lib/utils.js';

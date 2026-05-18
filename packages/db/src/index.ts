@@ -32,3 +32,6 @@ export {
 export { withTenantTransaction } from './tenant-transaction.js';
 
 export { tenantIsolation } from './extensions/tenant-isolation.js';
+
+export { writeAuditLog } from './audit.js';
+export type { AuditDiff, WriteAuditLogInput } from './audit.js';
