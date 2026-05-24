@@ -8,7 +8,7 @@ Project-wide conventions for Claude Code (and humans). Treat this file as author
 
 TikFlow is a multi-tenant SaaS for ISPs that automates MikroTik-based subscriber management and billing. See `Plan.md` for product context, architecture, schema, and 16-phase roadmap.
 
-Current phase: **Phase 1 — Tenant, RBAC, Settings, Onboarding Wizard** (complete — PR-1.1 general settings + PR-1.2 branding + PR-1.3 members & roles + PR-1.4 API keys + PR-1.5 onboarding wizard shipped).
+Current phase: **Phase 2 — Subscribers, Zones, Plans, Inventory** (core CRUD shipped — PR-2.1 zones, PR-2.2 plans, PR-2.3 subscribers, PR-2.4 inventory). Deferred to follow-up PRs: KYC upload + ClamAV, CSV bulk import, inventory movement history, NID column encryption, zone tree UI, pop sites + map (latter moved to Phase 10 with network map).
 
 ---
 
@@ -195,7 +195,7 @@ If you add a tenant-scoped table without an RLS policy, the migration check in C
 |---|---|---|
 | 0 — Foundation, Design System, Security Baseline | **Complete** | PR-0.1 monorepo+infra ✅, PR-0.2 db+RLS ✅, PR-0.3 Express API ✅, PR-0.4 web+ui+i18n ✅, PR-0.5 Auth.js ✅, PR-0.6 CI + security ✅ |
 | 1 — Tenant, RBAC, Settings, Onboarding | **Complete** | PR-1.1 general settings ✅; PR-1.2 branding ✅; PR-1.3 members & roles ✅; PR-1.4 API keys ✅; PR-1.5 onboarding wizard (5 steps, first-run redirect, audit-logged completion) ✅ |
-| 2 — Subscribers, Zones, Plans, Inventory | not started | |
+| 2 — Subscribers, Zones, Plans, Inventory | **Core complete** | PR-2.1 zones (CRUD, parent hierarchy, cycle guard, in-use guard) ✅; PR-2.2 service plans (CRUD, MikroTik mapping fields, archive guard) ✅; PR-2.3 subscribers (CRUD, fuzzy search, status filter, plan/zone assignment, soft-delete) ✅; PR-2.4 inventory items (CRUD, type/status filters, subscriber allocation) ✅. Deferred: KYC upload + ClamAV, CSV bulk import, inventory movement history, NID column encryption, zone tree UI, pop sites + map (moved to Phase 10) |
 | 3 — MikroTik Connector | not started | |
 | 4 — Notifications | not started | |
 | 5 — Billing Engine | not started | |
