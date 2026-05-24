@@ -9,7 +9,11 @@
     "./health": "./src/health.ts",
     "./tenant": "./src/tenant.ts",
     "./member": "./src/member.ts",
-    "./api-key": "./src/api-key.ts"
+    "./api-key": "./src/api-key.ts",
+    "./zone": "./src/zone.ts",
+    "./service-plan": "./src/service-plan.ts",
+    "./subscriber": "./src/subscriber.ts",
+    "./inventory": "./src/inventory.ts"
   },
   "files": ["src"],
   "scripts": {

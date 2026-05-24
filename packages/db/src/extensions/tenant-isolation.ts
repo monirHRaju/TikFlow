@@ -13,6 +13,12 @@ const TENANT_SCOPED_MODELS = new Set<string>([
   'Session',
   'AuditLog',
   'SecurityEvent',
+  // Phase 2
+  'Zone',
+  'ServicePlan',
+  'Subscriber',
+  'Subscription',
+  'InventoryItem',
 ]);
 
 const READ_OPERATIONS = new Set([
