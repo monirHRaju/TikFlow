@@ -2,3 +2,8 @@ export * from './common.js';
 export * from './health.js';
 export * from './tenant.js';
 export * from './member.js';
+export * from './api-key.js';
+export * from './zone.js';
+export * from './service-plan.js';
+export * from './subscriber.js';
+export * from './inventory.js';

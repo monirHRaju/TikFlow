@@ -22,6 +22,15 @@ const PERMISSIONS: Array<{ code: string; description: string }> = [
   { code: 'apikey.write', description: 'Create / revoke API keys' },
   { code: 'audit.read', description: 'View audit logs' },
   { code: 'security.read', description: 'View security events' },
+  // Phase 2
+  { code: 'zone.read', description: 'List zones' },
+  { code: 'zone.write', description: 'Create / update / delete zones' },
+  { code: 'plan.read', description: 'List service plans' },
+  { code: 'plan.write', description: 'Create / update / delete service plans' },
+  { code: 'subscriber.read', description: 'List and view subscribers' },
+  { code: 'subscriber.write', description: 'Create / update / delete subscribers' },
+  { code: 'inventory.read', description: 'List inventory items' },
+  { code: 'inventory.write', description: 'Create / update / delete inventory items' },
 ];
 
 const SYSTEM_ROLES = [
@@ -46,12 +55,27 @@ const SYSTEM_ROLES = [
       'apikey.write',
       'audit.read',
       'security.read',
+      'zone.read',
+      'zone.write',
+      'plan.read',
+      'plan.write',
+      'subscriber.read',
+      'subscriber.write',
+      'inventory.read',
+      'inventory.write',
     ],
   },
   {
     name: 'support',
-    description: 'Read-only access to users and audit logs.',
-    permissions: ['user.read', 'audit.read'],
+    description: 'Read-only access to subscribers, plans, zones, and audit logs.',
+    permissions: [
+      'user.read',
+      'audit.read',
+      'zone.read',
+      'plan.read',
+      'subscriber.read',
+      'inventory.read',
+    ],
   },
 ];
 

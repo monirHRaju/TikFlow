@@ -6,8 +6,10 @@
   "nav": {
     "dashboard": "Dashboard",
     "subscribers": "Subscribers",
+    "zones": "Zones",
     "plans": "Plans",
     "routers": "Routers",
+    "inventory": "Inventory",
     "billing": "Billing",
     "payments": "Payments",
     "tickets": "Tickets",
@@ -15,6 +17,270 @@
     "settings": "Settings",
     "signOut": "Sign out",
     "toggleTheme": "Toggle theme"
+  },
+  "zones": {
+    "title": "Zones",
+    "subtitle": "Organise your service territory — districts, upazilas, paras.",
+    "cardTitle": "All zones",
+    "cardSubtitle": "Subscribers and pop sites are bucketed under these.",
+    "createZone": "Create zone",
+    "manage": "Manage",
+    "empty": "No zones yet. Create your first zone to start grouping subscribers.",
+    "col": {
+      "name": "Name",
+      "slug": "Slug",
+      "parent": "Parent",
+      "subscribers": "Subscribers",
+      "actions": "Actions"
+    },
+    "form": {
+      "back": "Back to zones",
+      "createTitle": "Create a zone",
+      "editTitle": "Edit zone",
+      "subtitle": "Pick a parent to build a hierarchy, e.g. District → Upazila → Para.",
+      "name": "Name",
+      "slug": "Slug",
+      "slugHelp": "Lowercase letters, digits, single hyphens.",
+      "parent": "Parent zone",
+      "parentHelp": "Optional. Leave blank for a top-level region.",
+      "noParent": "— No parent —",
+      "description": "Description",
+      "create": "Create zone",
+      "save": "Save changes",
+      "saved": "Zone saved.",
+      "delete": "Delete",
+      "deleteConfirm": "Delete \"{name}\"? This is irreversible.",
+      "errors": {
+        "title": "Couldn't save",
+        "forbidden": "Only workspace owners and admins can manage zones.",
+        "slugTaken": "A zone with that slug already exists.",
+        "notFound": "Zone not found.",
+        "inUse": "Zone has subscribers or child zones — reassign them first.",
+        "parentCycle": "That would create a cycle in the hierarchy.",
+        "validation": "Some of the values are invalid.",
+        "unexpected": "Something went wrong. Please try again."
+      }
+    }
+  },
+  "plans": {
+    "title": "Service plans",
+    "subtitle": "What you sell — speeds, prices, validity.",
+    "cardTitle": "All plans",
+    "cardSubtitle": "Active plans appear in the subscriber and onboarding flows.",
+    "createPlan": "Create plan",
+    "manage": "Manage",
+    "empty": "No plans yet. Create your first plan so you can assign it to subscribers.",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "col": {
+      "name": "Name",
+      "code": "Code",
+      "type": "Type",
+      "speed": "Speed",
+      "price": "Price",
+      "status": "Status",
+      "subscribers": "Subscribers",
+      "actions": "Actions"
+    },
+    "form": {
+      "back": "Back to plans",
+      "createTitle": "Create a plan",
+      "editTitle": "Edit plan",
+      "subtitle": "Speeds are in kbps (10 Mbps = 10000). Price is in your workspace currency.",
+      "name": "Name",
+      "code": "Code",
+      "codeHelp": "Uppercase letters, digits, dashes, underscores. Used on invoices and MikroTik profiles.",
+      "description": "Description",
+      "type": "Type",
+      "validityDays": "Validity (days)",
+      "status": "Status",
+      "isActive": "Active and offered to new subscribers",
+      "uploadKbps": "Upload (kbps)",
+      "downloadKbps": "Download (kbps)",
+      "speedHelp": "10 Mbps = 10000 kbps.",
+      "burstUploadKbps": "Burst upload (kbps)",
+      "burstDownloadKbps": "Burst download (kbps)",
+      "price": "Price",
+      "priceHelp": "Excludes VAT.",
+      "vatPct": "VAT %",
+      "advanced": "Advanced — FUP and MikroTik mapping",
+      "fupLimitGb": "FUP limit (GB)",
+      "fupThrottleKbps": "FUP throttle (kbps)",
+      "mikrotikProfile": "MikroTik profile name",
+      "mikrotikProfileHelp": "Used by the connector in Phase 3 to map the plan to a router profile.",
+      "create": "Create plan",
+      "save": "Save changes",
+      "saved": "Plan saved.",
+      "archive": "Archive",
+      "archiveConfirm": "Archive \"{name}\"? This hides it from new subscribers but keeps history.",
+      "errors": {
+        "title": "Couldn't save",
+        "forbidden": "Only workspace owners and admins can manage plans.",
+        "codeTaken": "A plan with that code already exists.",
+        "notFound": "Plan not found.",
+        "inUse": "Plan has active subscriptions — set inactive instead of archiving.",
+        "validation": "Some of the values are invalid.",
+        "unexpected": "Something went wrong. Please try again."
+      }
+    }
+  },
+  "subscribers": {
+    "title": "Subscribers",
+    "subtitle": "Your customer base — profile, plan, and connection details.",
+    "cardTitle": "All subscribers",
+    "cardSubtitle": "Up to 200 most-recent results. Use the search box for older records.",
+    "createSubscriber": "Add subscriber",
+    "manage": "Manage",
+    "empty": "No subscribers yet. Add your first to get billing flowing.",
+    "emptyFiltered": "No subscribers match your filters.",
+    "searchPlaceholder": "Search by code, name, or phone…",
+    "allStatuses": "All statuses",
+    "apply": "Apply",
+    "status": {
+      "active": "Active",
+      "pending": "Pending",
+      "suspended": "Suspended",
+      "cancelled": "Cancelled"
+    },
+    "col": {
+      "code": "Code",
+      "name": "Name",
+      "phone": "Phone",
+      "zone": "Zone",
+      "plan": "Plan",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "form": {
+      "back": "Back to subscribers",
+      "createTitle": "Add a subscriber",
+      "editTitle": "Edit subscriber",
+      "subtitle": "Identity, contact details, and the service they're getting.",
+      "section": {
+        "identity": "Identity",
+        "contact": "Contact",
+        "service": "Service"
+      },
+      "code": "Subscriber code",
+      "codeHelp": "Uppercase letters, digits, dashes. Used on invoices and for fuzzy search.",
+      "fullName": "Full name",
+      "fatherName": "Father's name",
+      "nidNumber": "National ID",
+      "nidHelp": "Stored plaintext for MVP — column-level encryption arrives in a follow-up.",
+      "phone": "Phone",
+      "altPhone": "Alternate phone",
+      "email": "Email",
+      "address": "Address",
+      "installationDate": "Installation date",
+      "zone": "Zone",
+      "noZone": "— None —",
+      "connectionType": "Connection type",
+      "plan": "Service plan",
+      "planHelp": "The plan currently billed. You can change it later.",
+      "noPlan": "— No plan yet —",
+      "status": "Status",
+      "statusOpts": {
+        "pending": "Pending",
+        "active": "Active",
+        "suspended": "Suspended",
+        "cancelled": "Cancelled"
+      },
+      "notes": "Internal notes",
+      "create": "Create subscriber",
+      "save": "Save changes",
+      "saved": "Subscriber saved.",
+      "delete": "Delete",
+      "deleteConfirm": "Delete \"{name}\"? This soft-deletes the record and cancels their subscription.",
+      "errors": {
+        "title": "Couldn't save",
+        "forbidden": "Only workspace owners and admins can manage subscribers.",
+        "codeTaken": "A subscriber with that code already exists.",
+        "notFound": "Subscriber not found.",
+        "unknownZone": "Selected zone does not exist.",
+        "unknownPlan": "Selected plan does not exist.",
+        "validation": "Some of the values are invalid.",
+        "unexpected": "Something went wrong. Please try again."
+      }
+    }
+  },
+  "inventory": {
+    "title": "Inventory",
+    "subtitle": "Physical assets — ONTs, routers, splitters, cable drums.",
+    "cardTitle": "All items",
+    "cardSubtitle": "Up to 200 most-recent results. Filter by type or status to narrow down.",
+    "createItem": "Add item",
+    "manage": "Manage",
+    "empty": "No inventory items yet.",
+    "emptyFiltered": "No items match your filters.",
+    "searchPlaceholder": "Search by serial, MAC, vendor, model…",
+    "allTypes": "All types",
+    "allStatuses": "All statuses",
+    "apply": "Apply",
+    "type": {
+      "ont": "ONT",
+      "onu": "ONU",
+      "router": "Router",
+      "switch": "Switch",
+      "splitter": "Splitter",
+      "cable_drum": "Cable drum",
+      "nic": "NIC",
+      "antenna": "Antenna",
+      "other": "Other"
+    },
+    "status": {
+      "in_stock": "In stock",
+      "allocated": "Allocated",
+      "deployed": "Deployed",
+      "faulty": "Faulty",
+      "returned": "Returned",
+      "scrapped": "Scrapped"
+    },
+    "col": {
+      "type": "Type",
+      "serial": "Serial",
+      "model": "Model",
+      "location": "Location",
+      "status": "Status",
+      "subscriber": "Subscriber",
+      "actions": "Actions"
+    },
+    "form": {
+      "back": "Back to inventory",
+      "createTitle": "Add an inventory item",
+      "editTitle": "Edit inventory item",
+      "subtitle": "Track equipment from purchase to deployment.",
+      "type": "Type",
+      "status": "Status",
+      "serial": "Serial number",
+      "mac": "MAC address",
+      "macHelp": "Format AA:BB:CC:DD:EE:FF.",
+      "vendor": "Vendor",
+      "model": "Model",
+      "location": "Location",
+      "subscriber": "Allocated to subscriber",
+      "subscriberHelp": "Optional. Set when the device is in a customer's home.",
+      "noSubscriber": "— Not allocated —",
+      "purchasedAt": "Purchased on",
+      "warrantyUntil": "Warranty until",
+      "cost": "Cost",
+      "notes": "Notes",
+      "create": "Add item",
+      "save": "Save changes",
+      "saved": "Item saved.",
+      "delete": "Delete",
+      "deleteConfirm": "Delete inventory item \"{serial}\"? This is a soft-delete; history is preserved.",
+      "errors": {
+        "title": "Couldn't save",
+        "forbidden": "Only workspace owners and admins can manage inventory.",
+        "serialTaken": "An item with that serial already exists.",
+        "notFound": "Item not found.",
+        "unknownSubscriber": "Selected subscriber does not exist.",
+        "validation": "Some of the values are invalid.",
+        "unexpected": "Something went wrong. Please try again."
+      }
+    }
   },
   "auth": {
     "signInTitle": "Sign in to TikFlow",
@@ -69,6 +335,110 @@
     "search": "Search",
     "edit": "Edit",
     "delete": "Delete"
+  },
+  "onboarding": {
+    "skipForNow": "Skip for now",
+    "steps": {
+      "general": "Workspace",
+      "branding": "Branding",
+      "team": "Team",
+      "done": "Done"
+    },
+    "welcome": {
+      "title": "Welcome to TikFlow",
+      "subtitle": "Hi {email} — let's get your workspace ready.",
+      "intro": "We'll guide you through a few quick steps. Most of it can be changed later from Settings.",
+      "steps": {
+        "general": {
+          "title": "Confirm workspace defaults",
+          "body": "Name, timezone, currency, and a billing contact."
+        },
+        "branding": {
+          "title": "Add your branding",
+          "body": "Pick an accent colour and upload your logo URL."
+        },
+        "team": {
+          "title": "Invite your team",
+          "body": "Add admins, support staff, and field techs with the right roles."
+        },
+        "apiKeys": {
+          "title": "Hook up your tools (later)",
+          "body": "Once you finish onboarding, mint API keys for the integrations you run."
+        }
+      },
+      "footnote": "Everything is reversible. You can skip steps and finish later.",
+      "cta": "Get started"
+    },
+    "general": {
+      "title": "Confirm your workspace defaults",
+      "subtitle": "These shape your invoice numbering, scheduling, and pricing.",
+      "name": "Workspace name",
+      "billingEmail": "Billing email",
+      "billingEmailHelp": "Where TikFlow's own invoices land. Optional for now.",
+      "timezone": "Timezone",
+      "currency": "Currency",
+      "back": "Back",
+      "continue": "Save & continue",
+      "saving": "Saving…",
+      "errorTitle": "Couldn't save",
+      "errorBody": "Something went wrong. Please try again."
+    },
+    "branding": {
+      "title": "Make TikFlow yours",
+      "subtitle": "Change the accent colour and logo customers see in the admin panel.",
+      "accentColor": "Accent colour",
+      "accentColorHelp": "Used for buttons, links, and focus rings.",
+      "accentEnabled": "Use a custom colour",
+      "accentUnset": "TikFlow default",
+      "logoUrl": "Logo URL",
+      "logoUrlHelp": "Public HTTPS URL of an SVG or PNG. Skip if you don't have one handy.",
+      "invoiceNote": "Invoice header and footer customisation lives under Settings → Branding — you can fill them in any time.",
+      "back": "Back",
+      "skip": "Skip",
+      "continue": "Save & continue",
+      "saving": "Saving…",
+      "errorTitle": "Couldn't save",
+      "errorBody": "Something went wrong. Please try again."
+    },
+    "team": {
+      "title": "Invite a teammate",
+      "subtitle": "Add as many as you like — or skip and do it later from Settings → Members.",
+      "existingTitle": "Already on the team",
+      "existingSubtitle": "These people can already sign in.",
+      "email": "Email",
+      "emailHelp": "The address they'll use to sign in.",
+      "password": "Initial password",
+      "passwordHelp": "At least 12 characters with upper, lower, and a digit. Share securely.",
+      "generate": "Generate",
+      "roles": "Roles",
+      "add": "Add",
+      "adding": "Adding…",
+      "saved": "Teammate added",
+      "savedHint": "Add another or continue when you're done.",
+      "back": "Back",
+      "skip": "Skip for now",
+      "continue": "Continue",
+      "errorTitle": "Couldn't add the teammate",
+      "errorBody": "Something went wrong. Please try again."
+    },
+    "done": {
+      "title": "You're set up!",
+      "subtitle": "Welcome to TikFlow. Your workspace is ready.",
+      "next": {
+        "apiKeys": {
+          "title": "Issue an API key",
+          "body": "Generate read-only tokens for monitoring, dashboards, or scripts."
+        },
+        "mfa": {
+          "title": "Turn on MFA",
+          "body": "Owners and admins should set up an authenticator app before going live."
+        }
+      },
+      "phase2Note": "Subscribers, plans, and your first MikroTik router land in the next release — they'll appear in the sidebar then.",
+      "back": "Back",
+      "finish": "Go to dashboard",
+      "finishing": "Finishing…"
+    }
   },
   "settings": {
     "title": "Settings",
@@ -212,6 +582,73 @@
       "memberCount": "{count, plural, =0 {No members} =1 {1 member} other {# members}}",
       "permissionCount": "{count, plural, =0 {No permissions} =1 {1 permission} other {# permissions}}",
       "customComingSoon": "Custom role creation is coming in a later release."
+    },
+    "apiKeys": {
+      "cardTitle": "API keys",
+      "cardSubtitle": "Tokens for the public API, webhooks, and integrations. Treat them like passwords.",
+      "createKey": "Create key",
+      "empty": {
+        "title": "No API keys yet",
+        "subtitle": "Generate a key to call the TikFlow API from your own tools."
+      },
+      "col": {
+        "label": "Label",
+        "prefix": "Prefix",
+        "scopes": "Scopes",
+        "expires": "Expires",
+        "lastUsed": "Last used",
+        "actions": "Actions"
+      },
+      "never": "Never",
+      "expired": "Expired",
+      "revoke": "Revoke",
+      "revoking": "Revoking…",
+      "revokeConfirm": "Revoke \"{label}\"? Any client using this key will immediately stop working.",
+      "revokeError": {
+        "FORBIDDEN": "You don't have permission to revoke this key.",
+        "NOT_FOUND": "That key no longer exists.",
+        "UNEXPECTED": "Something went wrong. Please try again."
+      },
+      "new": {
+        "back": "Back to API keys",
+        "cardTitle": "Create an API key",
+        "cardSubtitle": "Pick a descriptive label, choose scopes, and set an expiry. You'll see the key once.",
+        "label": "Label",
+        "labelHelp": "Helps your future self identify which integration this key belongs to.",
+        "scopes": "Scopes",
+        "scopesHelp": "What this key can read. Keys ship read-only in this release — write scopes will be added per resource.",
+        "expiresAt": "Expires on",
+        "expiresAtHelp": "Leave blank for no expiry. We strongly recommend a rotation date.",
+        "submit": "Create key",
+        "submitting": "Creating…",
+        "warning": {
+          "title": "The key shows up once",
+          "body": "After you submit, TikFlow displays the secret a single time. Copy it into your password manager or secrets store before closing this page."
+        },
+        "errors": {
+          "forbiddenTitle": "You don't have permission",
+          "forbidden": "Only workspace owners and admins can manage API keys.",
+          "unexpectedTitle": "Couldn't create the key",
+          "unexpected": "Something went wrong. Please try again."
+        },
+        "created": {
+          "title": "Your API key is ready",
+          "subtitle": "\"{label}\" — copy the key below now. You won't see it again.",
+          "once": {
+            "title": "This is the only time the key will be shown",
+            "body": "TikFlow stores a hash, not the original value. If you lose it, revoke the key and create a new one."
+          },
+          "keyLabel": "API key",
+          "copy": "Copy",
+          "copied": "Copied",
+          "prefix": "Prefix",
+          "expiresAt": "Expires",
+          "scopes": "Scopes",
+          "never": "Never",
+          "confirm": "I've copied the key somewhere safe.",
+          "done": "Done"
+        }
+      }
     },
     "branding": {
       "cardTitle": "Branding",

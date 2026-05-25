@@ -3,8 +3,10 @@
 import {
   LayoutDashboard,
   Users,
+  MapPin,
   Package,
   Router,
+  Boxes,
   Receipt,
   CreditCard,
   LifeBuoy,
@@ -29,8 +31,10 @@ type Messages = {
   nav: {
     dashboard: string;
     subscribers: string;
+    zones: string;
     plans: string;
     routers: string;
+    inventory: string;
     billing: string;
     payments: string;
     tickets: string;
@@ -42,8 +46,10 @@ type Messages = {
 const NAV: NavItem[] = [
   { href: '/', icon: LayoutDashboard, labelKey: 'dashboard' },
   { href: '/subscribers', icon: Users, labelKey: 'subscribers' },
+  { href: '/zones', icon: MapPin, labelKey: 'zones' },
   { href: '/plans', icon: Package, labelKey: 'plans' },
   { href: '/routers', icon: Router, labelKey: 'routers' },
+  { href: '/inventory', icon: Boxes, labelKey: 'inventory' },
   { href: '/billing', icon: Receipt, labelKey: 'billing' },
   { href: '/payments', icon: CreditCard, labelKey: 'payments' },
   { href: '/tickets', icon: LifeBuoy, labelKey: 'tickets' },

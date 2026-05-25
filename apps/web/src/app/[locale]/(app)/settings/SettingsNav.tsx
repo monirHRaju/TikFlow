@@ -16,9 +16,9 @@ const TABS: ReadonlyArray<Tab> = [
   { href: '/settings/branding', labelKey: 'branding' },
   { href: '/settings/members', labelKey: 'members' },
   { href: '/settings/roles', labelKey: 'roles' },
-  // The following land in PR-1.4 and PR-1.5; render disabled so the IA
-  // stays visible from day one.
   { href: '/settings/api-keys', labelKey: 'apiKeys' },
+  // Audit log lands in a later PR; rendered disabled so the IA stays
+  // visible from day one.
   { href: '/settings/audit', labelKey: 'audit' },
 ];
 
@@ -27,6 +27,7 @@ const ENABLED = new Set<string>([
   '/settings/branding',
   '/settings/members',
   '/settings/roles',
+  '/settings/api-keys',
 ]);
 
 export function SettingsNav() {

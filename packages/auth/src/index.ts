@@ -14,3 +14,12 @@ export {
 } from './password.js';
 
 export { generateTotpSecret, buildTotpUri, verifyTotpToken } from './mfa.js';
+
+export {
+  API_KEY_BRAND,
+  API_KEY_PREFIX_LENGTH,
+  generateApiKey,
+  hashApiKey,
+  verifyApiKey,
+  type GeneratedApiKey,
+} from './api-key.js';

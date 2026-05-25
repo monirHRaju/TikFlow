@@ -57,6 +57,19 @@ export async function requireRole(
   }
 }
 
+/**
+ * Non-throwing variant of {@link requireRole} for code paths where the
+ * decision is "redirect" rather than "deny" (e.g., the onboarding gate
+ * in the app shell layout).
+ */
+export async function hasAnyRole(
+  session: AuthenticatedSession,
+  allowed: ReadonlyArray<string>,
+): Promise<boolean> {
+  const roleNames = await listRoleNames(session);
+  return roleNames.some((name) => allowed.includes(name));
+}
+
 async function listRoleNames(session: AuthenticatedSession): Promise<string[]> {
   return withTenantDb(session, async (tx) => {
     const rows = await tx.$queryRaw<Array<{ name: string }>>(Prisma.sql`
